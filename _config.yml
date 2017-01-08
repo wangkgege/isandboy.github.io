@@ -71,4 +71,4 @@ deploy:
   type: git
   repository: https://github.com/isandboy/isandboy.github.io.git
   branch: master
-  message: hexo deploy
+  message: Cocoapods使用
