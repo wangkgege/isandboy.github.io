@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+
+  <html class="light page-post">
+
+
+<head>
+  <meta charset="utf-8">
+  
+  <title>FMDB | 灯火阑珊</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  
+    <meta name="keywords" content="Objective-C, Swift, cocoapods, 杂记" />
+  
+
+  <meta name="description" content="FMDBFMDB的下载地址 https://github.com/ccgus/fmdb
+FMDB的安装FMDB can be installed using CocoaPods.
+pod &amp;apos;FMDB&amp;apos;
+# pod &amp;apos;FMDB/FTS&amp;apos;   # FMDB with FTS
+# pod &amp;apos;FMDB/standalone&amp;apos;   # FMDB w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FMDB">
+<meta property="og:url" content="https://isandboy.github.io/2017/02/27/FMDB使用/index.html">
+<meta property="og:site_name" content="灯火阑珊">
+<meta property="og:description" content="FMDBFMDB的下载地址 https://github.com/ccgus/fmdb
+FMDB的安装FMDB can be installed using CocoaPods.
+pod &amp;apos;FMDB&amp;apos;
+# pod &amp;apos;FMDB/FTS&amp;apos;   # FMDB with FTS
+# pod &amp;apos;FMDB/standalone&amp;apos;   # FMDB w">
+<meta property="og:updated_time" content="2017-02-27T15:11:33.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="FMDB">
+<meta name="twitter:description" content="FMDBFMDB的下载地址 https://github.com/ccgus/fmdb
+FMDB的安装FMDB can be installed using CocoaPods.
+pod &amp;apos;FMDB&amp;apos;
+# pod &amp;apos;FMDB/FTS&amp;apos;   # FMDB with FTS
+# pod &amp;apos;FMDB/standalone&amp;apos;   # FMDB w">
+
+  
+
+  
+    <link rel="icon" href="/favicon.ico">
+  
+
+  <link href="/css/styles.css?v=c114cbe6" rel="stylesheet">
+
+
+  
+    <link rel="stylesheet" href="/css/personal-style.css">
+  
+
+  
+
+  
+
+
+  
+    <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  
+
+  
+    <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  
+</head>
+
+<body>
+
+
+  
+    <span id="toolbox-mobile" class="toolbox-mobile">盒子</span>
+  
+
+  <div class="post-header LEFT">
+   
+  <div class="toolbox">
+    <a class="toolbox-entry" href="/">
+      <span class="toolbox-entry-text">盒子</span>
+      <i class="icon-angle-down"></i>
+      <i class="icon-home"></i>
+    </a>
+    <ul class="list-toolbox">
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/archives/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            博客
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/category/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            分类
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/tag/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            标签
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/link/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            友链
+          </a>
+        </li>
+      
+        <li class="item-toolbox">
+          <a
+            class="CIRCLE"
+            href="/about/"
+            rel="noopener noreferrer"
+            target="_self"
+            >
+            关于
+          </a>
+        </li>
+      
+    </ul>
+  </div>
+
+
+</div>
+
+
+  <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FMDB"><span class="toc-text">FMDB</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#USage"><span class="toc-text">USage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注意"><span class="toc-text">注意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#案例"><span class="toc-text">案例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#案例一"><span class="toc-text">案例一</span></a></li></ol></li></ol></li></ol></li></ol>
+  </div>
+
+
+
+<div class="content content-post LEFT">
+   <article id="post-FMDB使用" class="article article-type-post" itemprop="blogPost">
+  <header class="article-header">
+    <h1 class="post-title">FMDB</h1>
+
+    <div class="article-meta">
+      <span>
+        <i class="icon-calendar"></i>
+        <span>2017.02.27</span>
+      </span>
+
+      
+        <span class="article-author">
+          <i class="icon-user"></i>
+          <span>isandboy</span>
+        </span>
+      
+
+      
+
+
+      
+
+      
+      <i class="fa fa-eye"></i> 
+        <span id="busuanzi_container_page_pv">
+           &nbsp热度 <span id="busuanzi_value_page_pv">
+           <i class="fa fa-spinner fa-spin"></i></span>℃
+        </span>
+      
+
+      
+      
+    </div>
+  </header>
+
+  <div class="article-content">
+    
+      <h1 id="FMDB"><a href="#FMDB" class="headerlink" title="FMDB"></a>FMDB</h1><p>FMDB的下载地址 <a href="https://github.com/ccgus/fmdb" target="_blank" rel="external">https://github.com/ccgus/fmdb</a></p>
+<p>FMDB的安装<br>FMDB can be installed using CocoaPods.</p>
+<pre><code>pod &apos;FMDB&apos;
+# pod &apos;FMDB/FTS&apos;   # FMDB with FTS
+# pod &apos;FMDB/standalone&apos;   # FMDB with latest SQLite amalgamation source
+# pod &apos;FMDB/standalone/FTS&apos;   # FMDB with latest SQLite amalgamation source and FTS
+# pod &apos;FMDB/SQLCipher&apos;   # FMDB with SQLCipher
+</code></pre><h2 id="USage"><a href="#USage" class="headerlink" title="USage"></a>USage</h2><p>There are three main classes in FMDB:</p>
+<ol>
+<li><code>FMDatabase</code> - Represents a single SQLite database. Used for executing SQL statements.</li>
+<li><code>FMResultSet</code> - Represents the results of executing a query on an FMDatabase.</li>
+<li><code>FMDatabaseQueue</code> - If you’re wanting to perform queries and updates on multiple threads, you’ll want to use this class. It’s described in the “Thread Safety” section below.</li>
+</ol>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ol>
+<li>在多线程中推荐使用<code>FMDatabaseQueue</code>，为了保证线程安全。</li>
+<li>为了提高执行效率，使用<code>Transactions</code>(事物)，批量执行sql语句。</li>
+<li>同一个sqlite数据库支持同时在多个线程里面执行查询操作，但不支持同时执行更新和查询操作。</li>
+</ol>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h4 id="案例一"><a href="#案例一" class="headerlink" title="案例一"></a>案例一</h4><p>当正在更新数据库的时候，用户执行了查询操作<br>假如更新数据库需要2分钟，那么就会出现页面卡顿的情况，当数据库更新完毕后，才会执行用户的查询操作。</p>
+<p>解决方法：</p>
+<ol>
+<li>更新数据库使用<code>Transactions</code>（事务），一般情况2万条数据需要3s左右，还是挺快的。</li>
+<li><p>但有时候设备性能比较差，可能需要40s左右，这样会让用户等待40s。<br>使用<code>Transactions</code>（事务）批量化执行sql语句，使用延迟事务操作。</p>
+<p> 如2万条数据，可以选择每次更新后，当前分线程休眠2s（足够用户执行查询操作），然后继续执行事务操作，以此类推，直到数据库更新完毕。</p>
+</li>
+</ol>
+
+    
+  </div>
+</article>
+
+
+   
+
+   
+  <div class="box-prev-next clearfix">
+    <a class="show pull-left" href="/2017/02/27/Swift-learn/">
+        <i class="icon icon-angle-left"></i>
+    </a>
+    <a class="show pull-right" href="/2017/02/27/Swift-Protocol-programing/">
+        <i class="icon icon-angle-right"></i>
+    </a>
+  </div>
+
+
+
+
+</div>
+
+
+  <a id="backTop" class="back-top">
+    <i class="icon-angle-up"></i>
+  </a>
+
+
+
+
+  <div class="modal" id="modal">
+  <span id="cover" class="cover hide"></span>
+  <div id="modal-dialog" class="modal-dialog hide-dialog">
+    <div class="modal-header">
+      <span id="close" class="btn-close">关闭</span>
+    </div>
+    <hr>
+    <div class="modal-body">
+      <ul class="list-toolbox">
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/archives/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              博客
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/category/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              分类
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/tag/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              标签
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/link/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              友链
+            </a>
+          </li>
+        
+          <li class="item-toolbox">
+            <a
+              class="CIRCLE"
+              href="/about/"
+              rel="noopener noreferrer"
+              target="_self"
+              >
+              关于
+            </a>
+          </li>
+        
+      </ul>
+
+    </div>
+  </div>
+</div>
+
+
+
+  
+      <div class="fexo-comments comments-post">
+    
+
+    
+
+
+
+
+  </div>
+
+  
+
+  <script type="text/javascript">
+  function loadScript(url, callback) {
+    var script = document.createElement('script')
+    script.type = 'text/javascript';
+
+    if (script.readyState) { //IE
+      script.onreadystatechange = function() {
+        if (script.readyState == 'loaded' ||
+          script.readyState == 'complete') {
+          script.onreadystatechange = null;
+          callback();
+        }
+      };
+    } else { //Others
+      script.onload = function() {
+        callback();
+      };
+    }
+
+    script.src = url;
+    document.getElementsByTagName('head')[0].appendChild(script);
+  }
+
+  window.onload = function() {
+    loadScript('/js/bundle.js?235683', function() {
+      // load success
+    });
+  }
+</script>
+
+</body>
+</html>
